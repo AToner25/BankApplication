@@ -11,11 +11,6 @@ namespace BankApplication
         static void Main(string[] args)
         {
 
-            //HELLO ANTHONY
-
-
-            //hello jayson
-
         }
     }
 }
