@@ -18,7 +18,7 @@ namespace BankApplication
         double serviceCharge;
         enum accountStatus{ Active, Inactive };
 
-
+        public Account(double balance, double annualIntes) { }
         public void CalculateInterest()
         {
             throw new NotImplementedException();
@@ -38,5 +38,7 @@ namespace BankApplication
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
