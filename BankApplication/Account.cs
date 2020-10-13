@@ -21,14 +21,18 @@ namespace BankApplication
         public Account(double balance, double annualInterestRate)
         {
             this.balance = balance;
-            this.annualInterestRate = annualInterestRate;
+            this.annualInterestRate = 0.10;
         }
         
         
         
         public void CalculateInterest()
         {
-            throw new NotImplementedException();
+            double monthlyInterestRate;
+
+            monthlyInterestRate = (annualInterestRate / 12);
+            monthlyInterestRate = balance * monthlyInterestRate;
+            balance += monthlyInterestRate;
         }
 
         public string CloseAndReport()
