@@ -16,10 +16,16 @@ namespace BankApplication
         int countWithdraw = 0;
         double annualInterestRate;
         double serviceCharge;
-        enum accountStatus{ Active, Inactive };
+        public enum accountStatus{ Active, Inactive };
 
-        public Account(double balance, double annualInterestRate) {}
-
+        public Account(double balance, double annualInterestRate)
+        {
+            this.balance = balance;
+            this.annualInterestRate = annualInterestRate;
+        }
+        
+        
+        
         public void CalculateInterest()
         {
             throw new NotImplementedException();
