@@ -18,7 +18,14 @@ namespace BankApplication
         double serviceCharge;
         enum accountStatus{ Active, Inactive };
 
-        public Account(double balance, double annualIntes) { }
+        public Account(double balance, double annualInterestRate)
+        {
+            this.balance = balance;
+            this.annualInterestRate = annualInterestRate;
+        }
+        
+        
+        
         public void CalculateInterest()
         {
             throw new NotImplementedException();
