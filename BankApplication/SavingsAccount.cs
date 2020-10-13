@@ -16,27 +16,30 @@ namespace BankApplication
         {
 
         }
-
-       private void MakeWithdraw()
+        
+       public void MakeWithdraw(double amount) 
         {
             accountStatus accountStatus = accountStatus.Inactive;
 
             if(accountStatus == accountStatus.Inactive)
-            { 
-                base.MakeWithdrawl();
+            {
+                base.MakeWithdrawl(amount);
             }
             
         }
 
-        private void MakeDeposit()
+        public void MakeDeposit(double amount) 
         {
             accountStatus accountStatus = accountStatus.Inactive;
+            
+
 
             if (accountStatus == accountStatus.Inactive )
             {
-                if(MakeDeposit < 25)
+                if(amount > 25)
                 {
-
+                    base.MakeDeposit(amount);
+                    accountStatus = accountStatus.Active;
                 }
              
             }
