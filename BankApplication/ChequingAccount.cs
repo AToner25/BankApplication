@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace BankApplication
 {
-    class ChequingAccount : Account
+    class ChequingAccount : Account, IAccount
     {
+        public ChequingAccount(double balance, double annualInterestRate): base(balance, annualInterestRate)
+        {
+
+        }
         public void makeWithdraw(double amount)
         {
 
