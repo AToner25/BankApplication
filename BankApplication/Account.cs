@@ -16,7 +16,7 @@ namespace BankApplication
         int countWithdraw;
         double annualInterestRate;
         double serviceCharge;
-        enum accountStatus{ Active, Inactive };
+        public enum accountStatus{ Active, Inactive };
 
         public Account(double balance, double annualInterestRate)
         {
