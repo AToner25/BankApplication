@@ -19,6 +19,7 @@ namespace BankApplication
         enum accountStatus{ Active, Inactive };
 
         public Account(double balance, double annualInterestRate) {}
+
         public void CalculateInterest()
         {
             throw new NotImplementedException();
