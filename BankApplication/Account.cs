@@ -11,14 +11,14 @@ namespace BankApplication
         double startingBalance;
         double balance;
         double totalDeposit;
-        int countDeposit;
+        int countDeposit = 0;
         double totalWithdraw;
-        int countWithdraw;
+        int countWithdraw = 0;
         double annualInterestRate;
         double serviceCharge;
         enum accountStatus{ Active, Inactive };
 
-        public Account(double balance, double annualIntes) { }
+        public Account(double balance, double annualInterestRate) {}
         public void CalculateInterest()
         {
             throw new NotImplementedException();
@@ -31,12 +31,14 @@ namespace BankApplication
 
         public void MakeDeposit(double amount)
         {
-            throw new NotImplementedException();
+            balance += amount;
+            countDeposit++;
         }
 
         public void MakeWithdrawl(double amount)
         {
-            throw new NotImplementedException();
+            balance -= amount;
+            countWithdraw++;
         }
 
         
