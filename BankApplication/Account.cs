@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,15 +36,16 @@ namespace BankApplication
             balance += monthlyInterestRate;
         }
 
-        public void CloseAndReport()
+        public string CloseAndReport()
         {
-            Console.WriteLine("Previous Balance: {0}", balance);
-            balance -= serviceCharge;
-            Console.WriteLine("New Balance: {0}", balance);
+            Console.WriteLine("The previous balance: {0}", startingBalance);
+            Console.WriteLine("The New Balance: {0}", balance);
             Console.WriteLine(CalculateInterest()); 
             countWithdraw = 0;
             countDeposit = 0;
             serviceCharge = 0;
+
+            return CloseAndReport();
 
         }
 

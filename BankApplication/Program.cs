@@ -10,19 +10,19 @@ namespace BankApplication
     {
         static void Main(string[] args)
         {
-
             String Option;
             String Option1;
             String Option2;
             String Option3;
+          
             try
             {
+                
                 Console.WriteLine("Bank Menu");
                 Console.WriteLine("A:Savings");
                 Console.WriteLine("B:Checking");
                 Console.WriteLine("C:GlobalSavings");
                 Console.WriteLine("Q:Exit");
-
                 Option = Console.ReadLine();
 
 
@@ -35,6 +35,7 @@ namespace BankApplication
                         Console.WriteLine("B:Withdrawal");
                         Console.WriteLine("C:Close + Report");
                         Console.WriteLine("R:Return to Bank Menu");
+                        Option1 = Console.ReadLine();
                         break;
 
                     case "B":
@@ -65,22 +66,28 @@ namespace BankApplication
                 switch (Option1.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
-                        Console.WriteLine("");
+                        Console.WriteLine("Deposit");
+                        
+                        
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("Withdrawal");
                         Console.WriteLine("");
                         break;
 
                     case "C":
-                        Console.WriteLine("");
+                        Console.WriteLine("Close + Report");
                         Console.WriteLine("");
                         break;
 
                     case "R":
-                        
+                        Console.WriteLine("Bank Menu");
+                        Console.WriteLine("A:Savings");
+                        Console.WriteLine("B:Checking");
+                        Console.WriteLine("C:GlobalSavings");
+                        Console.WriteLine("Q:Exit");
+                        Option = Console.ReadLine();
                         break;
                 }
 
@@ -88,51 +95,63 @@ namespace BankApplication
                 switch (Option2.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
+                        Console.WriteLine("Deposit");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("Withdrawal");
                         Console.WriteLine("");
                         break;
 
                     case "C":
-                        Console.WriteLine("");
+                        Console.WriteLine("Close + Report");
                         Console.WriteLine("");
                         break;
 
                     case "R":
-
+                        Console.WriteLine("Bank Menu");
+                        Console.WriteLine("A:Savings");
+                        Console.WriteLine("B:Checking");
+                        Console.WriteLine("C:GlobalSavings");
+                        Console.WriteLine("Q:Exit");
+                        Option = Console.ReadLine();
                         break;
+
                 }
 
                 Option3 = Console.ReadLine();
                 switch (Option3.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
+                        Console.WriteLine("Deposit");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("Withdrawal");
                         Console.WriteLine("");
                         break;
 
                     case "C":
-                        Console.WriteLine("");
+                        Console.WriteLine("Close + Report");
                         Console.WriteLine("");
                         break;
 
                     case "D":
-                        Console.WriteLine("");
+                        Console.WriteLine("Report Balanace in USD");
                         Console.WriteLine("");
                         break;
 
                     case "R":
-                        
+                        Console.WriteLine("Bank Menu");
+                        Console.WriteLine("A:Savings");
+                        Console.WriteLine("B:Checking");
+                        Console.WriteLine("C:GlobalSavings");
+                        Console.WriteLine("Q:Exit");
+                        Option = Console.ReadLine();
                         break;
+
                 }
             }
             catch

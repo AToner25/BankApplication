@@ -11,13 +11,21 @@ namespace BankApplication
 {
     class SavingsAccount : Account, IAccount
     {
-       
-        public SavingsAccount(double balance, double interestRate) : base (balance, interestRate)
+        accountStatus status;
+        public SavingsAccount(double balance, double annualInterestRate) : base(balance, annualInterestRate)
         {
-
+            if (balance < 25)
+            {
+                 status = accountStatus.Inactive;
+            }
+            else
+            {
+                status = accountStatus.Active;
+            }
         }
-        
-       public void MakeWithdraw(double amount) 
+
+
+        public void MakeWithdraw(double amount) 
         {
             accountStatus accountStatus = accountStatus.Inactive;
 
@@ -32,9 +40,7 @@ namespace BankApplication
         {
             accountStatus accountStatus = accountStatus.Inactive;
             
-
-
-            while (accountStatus == accountStatus.Inactive )
+            while (accountStatus == accountStatus.Inactive)
             {
                 if(amount > 25)
                 {
@@ -55,8 +61,10 @@ namespace BankApplication
             if(countWithdraw > 4)
             {
                 serviceCharge += countWithdraw * 1.00 ;
-                serviceCharge -= 4.00; //removing the 4$ since the first four withdrawals are not charged
+                 
             }
+            else
+                serviceCharge -= 4.00;
             base.CloseAndReport();
             if(balance < 25)
             {
