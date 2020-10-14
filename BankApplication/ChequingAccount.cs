@@ -14,21 +14,23 @@ namespace BankApplication
         }
         public void makeWithdraw(double amount)
         {
-            if (balance < 0)
+            if (balance > 0)
             {
-                serviceCharge = 15;
-                Account -= serviceCharge;
+                serviceCharge += 15;
+                balance -= serviceCharge;
             }
             else
                 balance -= amount;
+
+            base.MakeWithdrawl(amount);
         }
         public void CloseAndReport()
         {
-
+            serviceCharge += 5.00 + countWithdraw * 0.10;
         }
         public void makeDeposit(double amount)
         {
-            
+            base.MakeDeposit(amount);
         }
     }
 }

@@ -37,7 +37,10 @@ namespace BankApplication
 
         public void CloseAndReport()
         {
+            
             balance -= serviceCharge;
+
+            
            
         }
 

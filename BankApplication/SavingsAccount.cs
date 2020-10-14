@@ -47,8 +47,19 @@ namespace BankApplication
 
         public void CloseAndReport()
         {
-
+            accountStatus accountStatus = accountStatus.Active;
+            if(countWithdraw < 4)
+            {
+                serviceCharge += countWithdraw * 1.00 ;
+            }
+            base.CloseAndReport();
+            if(balance > 25)
+            {
+                accountStatus = accountStatus.Inactive; 
+            }
         }
+
+        
 
 
 
