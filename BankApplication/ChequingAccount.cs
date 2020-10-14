@@ -17,8 +17,10 @@ namespace BankApplication
             if (balance < 0)
             {
                 serviceCharge = 15;
-                totalDeposit -= serviceCharge;
+                Account -= serviceCharge;
             }
+            else
+                balance -= amount;
         }
         public void CloseAndReport()
         {

@@ -21,7 +21,7 @@ namespace BankApplication
                 Console.WriteLine("A:Savings");
                 Console.WriteLine("B:Checking");
                 Console.WriteLine("C:GlobalSavings");
-                Console.WriteLine("D:Savings");
+                Console.WriteLine("Q:Exit");
 
                 Option = Console.ReadLine();
 
@@ -35,9 +35,104 @@ namespace BankApplication
                         Console.WriteLine("B:Withdrawal");
                         Console.WriteLine("C:Close + Report");
                         Console.WriteLine("R:Return to Bank Menu");
-                        Option1 = Console.ReadLine();
                         break;
 
+                    case "B":
+                        Console.WriteLine("Chequing Menu");
+                        Console.WriteLine("A:Deposit");
+                        Console.WriteLine("B:Withdrawal");
+                        Console.WriteLine("C:Close + Report");
+                        Console.WriteLine("R:Return to Bank Menu");
+                        Option2 = Console.ReadLine();
+                        break;
+
+                    case "C":
+                        Console.WriteLine("Global Savings Menu");
+                        Console.WriteLine("A:Deposit");
+                        Console.WriteLine("B:Withdrawal");
+                        Console.WriteLine("C:Close + Report");
+                        Console.WriteLine("D:Report Balance in USD");
+                        Console.WriteLine("R:Return to Bank Menu");
+                        Option3 = Console.ReadLine();
+                        break;
+
+                    case "Q":
+                        Environment.Exit(0);
+                        break;
+
+                }
+                Option1 = Console.ReadLine();
+                switch (Option1.ToUpper())
+                {
+                    case "A":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "B":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "C":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "R":
+                        
+                        break;
+                }
+
+                Option2 = Console.ReadLine();
+                switch (Option2.ToUpper())
+                {
+                    case "A":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "B":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "C":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "R":
+
+                        break;
+                }
+
+                Option3 = Console.ReadLine();
+                switch (Option3.ToUpper())
+                {
+                    case "A":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "B":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "C":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "D":
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        break;
+
+                    case "R":
+                        
+                        break;
                 }
             }
             catch

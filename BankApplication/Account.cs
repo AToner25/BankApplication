@@ -37,7 +37,8 @@ namespace BankApplication
 
         public void CloseAndReport()
         {
-            
+            balance -= serviceCharge;
+           
         }
 
         public void MakeDeposit(double amount)
