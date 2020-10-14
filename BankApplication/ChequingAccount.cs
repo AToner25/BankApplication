@@ -14,7 +14,11 @@ namespace BankApplication
         }
         public void makeWithdraw(double amount)
         {
-
+            if (balance < 0)
+            {
+                serviceCharge = 15;
+                totalDeposit -= serviceCharge;
+            }
         }
         public void CloseAndReport()
         {
