@@ -34,28 +34,37 @@ namespace BankApplication
             
 
 
-            if (accountStatus == accountStatus.Inactive )
+            while (accountStatus == accountStatus.Inactive )
             {
-                if(amount < 25)
+                if(amount > 25)
                 {
                     base.MakeDeposit(amount);
                     accountStatus = accountStatus.Active;
                 }
-             
+                else
+                {
+                    accountStatus = accountStatus.Inactive;
+                }
+                    
             }
         }
 
         public void CloseAndReport()
         {
             accountStatus accountStatus = accountStatus.Active;
-            if(countWithdraw < 4)
+            if(countWithdraw > 4)
             {
                 serviceCharge += countWithdraw * 1.00 ;
+                serviceCharge -= 4.00; //removing the 4$ since the first four withdrawals are not charged
             }
             base.CloseAndReport();
-            if(balance > 25)
+            if(balance < 25)
             {
-                accountStatus = accountStatus.Inactive; 
+                accountStatus = accountStatus.Inactive;
+            }
+            else
+            {
+                accountStatus = accountStatus.Active;
             }
         }
 
