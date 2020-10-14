@@ -8,9 +8,18 @@ namespace BankApplication
 {
     class ChequingAccount : Account, IAccount
     {
+
+        accountStatus status;
         public ChequingAccount(double balance, double annualInterestRate): base(balance, annualInterestRate)
         {
-
+            if (balance < 25)
+            {
+                status = accountStatus.Inactive;
+            }
+            else
+            {
+                status = accountStatus.Active;
+            }
         }
         public void makeWithdraw(double amount)
         {

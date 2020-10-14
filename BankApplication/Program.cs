@@ -15,7 +15,9 @@ namespace BankApplication
             String Option1;
             String Option2;
             String Option3;
-          
+
+            Account savingsAccount = new Account();
+
             try
             {
                 
@@ -36,7 +38,7 @@ namespace BankApplication
                         Console.WriteLine("B:Withdrawal");
                         Console.WriteLine("C:Close + Report");
                         Console.WriteLine("R:Return to Bank Menu");
-                        Option1 = Console.ReadLine();
+                        
                         break;
 
                     case "B":
@@ -45,7 +47,7 @@ namespace BankApplication
                         Console.WriteLine("B:Withdrawal");
                         Console.WriteLine("C:Close + Report");
                         Console.WriteLine("R:Return to Bank Menu");
-                        Option2 = Console.ReadLine();
+                       
                         break;
 
                     case "C":
@@ -55,7 +57,7 @@ namespace BankApplication
                         Console.WriteLine("C:Close + Report");
                         Console.WriteLine("D:Report Balance in USD");
                         Console.WriteLine("R:Return to Bank Menu");
-                        Option3 = Console.ReadLine();
+                        
                         break;
 
                     case "Q":
@@ -64,6 +66,7 @@ namespace BankApplication
 
                 }
                 Option1 = Console.ReadLine();
+                
                 switch (Option1.ToUpper())
                 {
                     case "A":
@@ -87,20 +90,20 @@ namespace BankApplication
                         Console.WriteLine("B:Checking");
                         Console.WriteLine("C:GlobalSavings");
                         Console.WriteLine("Q:Exit");
-                        Option = Console.ReadLine();
+                        
                         break;
                 }
-
+                Option = Console.ReadLine();
                 Option2 = Console.ReadLine();
                 switch (Option2.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to deposit?");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to withdraw?");
                         Console.WriteLine("");
                         break;
 

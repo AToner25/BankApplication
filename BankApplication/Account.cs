@@ -36,12 +36,12 @@ namespace BankApplication
             balance += monthlyInterestRate;
         }
 
-        public void CloseAndReport() //We need to call CalculateInterest 
+        public string CloseAndReport() 
         {
-            Console.WriteLine("Previous Balance: {0}", balance);
+            Console.WriteLine("Previous Balance: {0}", startingBalance);
             balance -= serviceCharge;
             Console.WriteLine("New Balance: {0}", balance);
-            Console.WriteLine(); 
+            Console.WriteLine(startingBalance / balance); 
             countWithdraw = 0;
             countDeposit = 0;
             serviceCharge = 0;

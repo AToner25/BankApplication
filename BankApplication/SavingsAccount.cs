@@ -25,11 +25,10 @@ namespace BankApplication
         }
 
 
-        public void MakeWithdraw(double amount) 
-        {
-            accountStatus accountStatus = accountStatus.Inactive;
+        public void MakeWithdraw(double amount)
+        { 
 
-            if(accountStatus == accountStatus.Inactive)
+            if(status == accountStatus.Inactive)
             {
                 base.MakeWithdrawl(amount);
             }
@@ -38,18 +37,18 @@ namespace BankApplication
 
         public void MakeDeposit(double amount) 
         {
-            accountStatus accountStatus = accountStatus.Inactive;
             
-            while (accountStatus == accountStatus.Inactive)
+            
+            while (status == accountStatus.Inactive)
             {
                 if(amount > 25)
                 {
                     base.MakeDeposit(amount);
-                    accountStatus = accountStatus.Active;
+                    status = accountStatus.Active;
                 }
                 else
                 {
-                    accountStatus = accountStatus.Inactive;
+                    status = accountStatus.Inactive;
                 }
                     
             }
@@ -57,22 +56,20 @@ namespace BankApplication
 
         public void CloseAndReport()
         {
-            accountStatus accountStatus = accountStatus.Active;
+            
             if(countWithdraw > 4)
             {
                 serviceCharge += countWithdraw * 1.00 ;
-                 
-            }
-            else
                 serviceCharge -= 4.00;
+            }
             base.CloseAndReport();
             if(balance < 25)
             {
-                accountStatus = accountStatus.Inactive;
+                status = accountStatus.Inactive;
             }
             else
             {
-                accountStatus = accountStatus.Active;
+                status = accountStatus.Active;
             }
         }
 
