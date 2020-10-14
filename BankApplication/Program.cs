@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -66,13 +67,12 @@ namespace BankApplication
                 switch (Option1.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("Deposit");
-                        
+                        Console.WriteLine("How much would you like to deposit?");
                         
                         break;
 
                     case "B":
-                        Console.WriteLine("Withdrawal");
+                        Console.WriteLine("How much would you like to withdraw?");
                         Console.WriteLine("");
                         break;
 
@@ -95,12 +95,12 @@ namespace BankApplication
                 switch (Option2.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("Deposit");
+                        Console.WriteLine("");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("Withdrawal");
+                        Console.WriteLine("");
                         Console.WriteLine("");
                         break;
 
@@ -124,12 +124,12 @@ namespace BankApplication
                 switch (Option3.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("Deposit");
+                        Console.WriteLine("");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("Withdrawal");
+                        Console.WriteLine("");
                         Console.WriteLine("");
                         break;
 
@@ -161,5 +161,6 @@ namespace BankApplication
            
 
         }
+
     }
 }
