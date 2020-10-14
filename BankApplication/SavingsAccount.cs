@@ -36,13 +36,18 @@ namespace BankApplication
 
             if (accountStatus == accountStatus.Inactive )
             {
-                if(amount > 25)
+                if(amount < 25)
                 {
                     base.MakeDeposit(amount);
                     accountStatus = accountStatus.Active;
                 }
              
             }
+        }
+
+        public void CloseAndReport()
+        {
+
         }
 
 

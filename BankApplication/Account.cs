@@ -8,14 +8,14 @@ namespace BankApplication
 {
     abstract class Account : IAccount
     {
-        double startingBalance;
-        double balance;
-        double totalDeposit;
-        int countDeposit = 0;
-        double totalWithdraw;
-        int countWithdraw = 0;
-        double annualInterestRate;
-        double serviceCharge;
+        public double startingBalance;
+        public double balance;
+        public double totalDeposit;
+        public int countDeposit = 0;
+        public double totalWithdraw;
+        public int countWithdraw = 0;
+        public double annualInterestRate;
+        public double serviceCharge;
         public enum accountStatus{ Active, Inactive };
 
         public Account(double balance, double annualInterestRate)
@@ -35,9 +35,9 @@ namespace BankApplication
             balance += monthlyInterestRate;
         }
 
-        public string CloseAndReport()
+        public void CloseAndReport()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void MakeDeposit(double amount)
