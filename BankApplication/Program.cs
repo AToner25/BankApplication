@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ namespace BankApplication
                         Console.WriteLine("B:Withdrawal");
                         Console.WriteLine("C:Close + Report");
                         Console.WriteLine("R:Return to Bank Menu");
+                        Option1 = Console.ReadLine();
                         break;
 
                     case "B":
@@ -65,12 +67,12 @@ namespace BankApplication
                 switch (Option1.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to deposit?");
+                        
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to withdraw?");
                         Console.WriteLine("");
                         break;
 
@@ -88,12 +90,12 @@ namespace BankApplication
                 switch (Option2.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to deposit?");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to withdraw?");
                         Console.WriteLine("");
                         break;
 
@@ -111,12 +113,12 @@ namespace BankApplication
                 switch (Option3.ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to deposit?");
                         Console.WriteLine("");
                         break;
 
                     case "B":
-                        Console.WriteLine("");
+                        Console.WriteLine("How much would you like to withdraw?");
                         Console.WriteLine("");
                         break;
 
@@ -142,5 +144,6 @@ namespace BankApplication
            
 
         }
+
     }
 }
