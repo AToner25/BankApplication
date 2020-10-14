@@ -37,8 +37,14 @@ namespace BankApplication
 
         public void CloseAndReport()
         {
+            Console.WriteLine("Previous Balance: {0}", balance);
             balance -= serviceCharge;
-           
+            Console.WriteLine("New Balance: {0}", balance);
+            Console.WriteLine(CalculateInterest()); 
+            countWithdraw = 0;
+            countDeposit = 0;
+            serviceCharge = 0;
+
         }
 
         public void MakeDeposit(double amount)
