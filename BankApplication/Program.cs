@@ -87,39 +87,38 @@ namespace BankApplication
 
 
                         }
-                    }
-                        Option1 = Console.ReadLine();
 
+                        Option1 = Console.ReadLine();
                         switch (Option1.ToUpper())
                         {
                             case "A":
+                                valid1 = true;
                                 Console.WriteLine("How much would you like to deposit?");
 
                                 break;
 
                             case "B":
+                                valid1 = true;
                                 Console.WriteLine("How much would you like to withdraw?");
                                 Console.WriteLine("");
                                 break;
 
                             case "C":
+                                valid1 = true;
                                 Console.WriteLine("Close + Report");
                                 Console.WriteLine("");
                                 break;
 
                             case "R":
-                                Console.WriteLine("Bank Menu");
-                                Console.WriteLine("A:Savings");
-                                Console.WriteLine("B:Checking");
-                                Console.WriteLine("C:GlobalSavings");
-                                Console.WriteLine("Q:Exit");
+                                valid1 = false;
                                 break;
-                        
-                        default:
-                            valid1 = false;
-                            Console.WriteLine("That is not an option, try again.");
 
-                            break;
+                            default:
+                                valid1 = false;
+                                Console.WriteLine("That is not an option, try again.");
+
+                                break;
+                        }
                     }
                         
                         Option2 = Console.ReadLine();
@@ -141,16 +140,12 @@ namespace BankApplication
                                 break;
 
                             case "R":
-                                Console.WriteLine("Bank Menu");
-                                Console.WriteLine("A:Savings");
-                                Console.WriteLine("B:Checking");
-                                Console.WriteLine("C:GlobalSavings");
-                                Console.WriteLine("Q:Exit");
+                                valid1 = false;
                                 Option = Console.ReadLine();
                                 break;
 
                         default:
-                            valid1 = false;
+                            
                             Console.WriteLine("That is not an option, try again.");
 
                             break;
@@ -190,12 +185,12 @@ namespace BankApplication
                                 break;
 
                         default:
-                            valid1 = false;
+                            
                             Console.WriteLine("That is not an option, try again.");
 
                             break;
 
-                    }
+                        }
                     }
                     catch
                     {
