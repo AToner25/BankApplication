@@ -20,6 +20,7 @@ namespace BankApplication
             SavingsAccount savingsAccount = new SavingsAccount(5.00, .10);
             ChequingAccount chequingAccount = new ChequingAccount(5.00, .15);
             GlobalSavingsAccount GlobalSavingsAccount = new GlobalSavingsAccount(5.00, .15);
+            
 
             var valid = true;
             while (valid)
@@ -112,9 +113,14 @@ namespace BankApplication
                                 Console.WriteLine("B:Checking");
                                 Console.WriteLine("C:GlobalSavings");
                                 Console.WriteLine("Q:Exit");
-
                                 break;
-                        }
+                        
+                        default:
+                            valid1 = false;
+                            Console.WriteLine("That is not an option, try again.");
+
+                            break;
+                    }
                         
                         Option2 = Console.ReadLine();
                         switch (Option2.ToUpper())
@@ -143,7 +149,13 @@ namespace BankApplication
                                 Option = Console.ReadLine();
                                 break;
 
-                        }
+                        default:
+                            valid1 = false;
+                            Console.WriteLine("That is not an option, try again.");
+
+                            break;
+
+                    }
 
                         Option3 = Console.ReadLine();
                         switch (Option3.ToUpper())
@@ -177,7 +189,13 @@ namespace BankApplication
                                 Option = Console.ReadLine();
                                 break;
 
-                        }
+                        default:
+                            valid1 = false;
+                            Console.WriteLine("That is not an option, try again.");
+
+                            break;
+
+                    }
                     }
                     catch
                     {
