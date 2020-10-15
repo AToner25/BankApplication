@@ -13,9 +13,10 @@ namespace BankApplication
         static void Main(string[] args)
         {
             String Option;
-            String Option1;
             String Option2;
             String Option3;
+            String Option4;
+            String Option5;
 
             SavingsAccount savingsAccount = new SavingsAccount(5.00, .10);
             ChequingAccount chequingAccount = new ChequingAccount(5.00, .15);
@@ -28,10 +29,9 @@ namespace BankApplication
 
                 try
                 {
-                    var valid1 = false;
-                    while (!valid1)
-                    {
 
+                    string bankMenu()
+                    {
                         Console.WriteLine("Bank Menu");
                         Console.WriteLine("A:Savings");
                         Console.WriteLine("B:Checking");
@@ -39,163 +39,111 @@ namespace BankApplication
                         Console.WriteLine("Q:Exit");
                         Option = Console.ReadLine();
 
-
-
-                        switch (Option.ToUpper())
-                        {
-                            case "A":
-                                valid1 = true;
-                                Console.WriteLine("Saving Menu");
-                                Console.WriteLine("A:Deposit");
-                                Console.WriteLine("B:Withdrawal");
-                                Console.WriteLine("C:Close + Report");
-                                Console.WriteLine("R:Return to Bank Menu");
-
-                                break;
-
-                            case "B":
-                                valid1 = true;
-                                Console.WriteLine("Chequing Menu");
-                                Console.WriteLine("A:Deposit");
-                                Console.WriteLine("B:Withdrawal");
-                                Console.WriteLine("C:Close + Report");
-                                Console.WriteLine("R:Return to Bank Menu");
-
-                                break;
-
-                            case "C":
-                                valid1 = true;
-                                Console.WriteLine("Global Savings Menu");
-                                Console.WriteLine("A:Deposit");
-                                Console.WriteLine("B:Withdrawal");
-                                Console.WriteLine("C:Close + Report");
-                                Console.WriteLine("D:Report Balance in USD");
-                                Console.WriteLine("R:Return to Bank Menu");
-
-                                break;
-
-                            case "Q":
-                                Environment.Exit(0);
-
-                                break;
-
-                            default:
-                                valid1 = false;
-                                Console.WriteLine("That is not an option, try again.");
-
-                                break;
-
-
-                        }
-
-                        Option1 = Console.ReadLine();
-                        switch (Option1.ToUpper())
-                        {
-                            case "A":
-                                valid1 = true;
-                                Console.WriteLine("How much would you like to deposit?");
-
-                                break;
-
-                            case "B":
-                                valid1 = true;
-                                Console.WriteLine("How much would you like to withdraw?");
-                                Console.WriteLine("");
-                                break;
-
-                            case "C":
-                                valid1 = true;
-                                Console.WriteLine("Close + Report");
-                                Console.WriteLine("");
-                                break;
-
-                            case "R":
-                                valid1 = false;
-                                break;
-
-                            default:
-                                valid1 = false;
-                                Console.WriteLine("That is not an option, try again.");
-
-                                break;
-                        }
+                        return Option;
                     }
-                        
+                    string savingAccount()
+                    {
+                        Console.WriteLine("Saving Menu");
+                        Console.WriteLine("A:Deposit");
+                        Console.WriteLine("B:Withdrawal");
+                        Console.WriteLine("C:Close + Report");
+                        Console.WriteLine("R:Return to Bank Menu");
                         Option2 = Console.ReadLine();
-                        switch (Option2.ToUpper())
-                        {
-                            case "A":
-                                Console.WriteLine("How much would you like to deposit?");
-                                Console.WriteLine("");
-                                break;
-
-                            case "B":
-                                Console.WriteLine("How much would you like to withdraw?");
-                                Console.WriteLine("");
-                                break;
-
-                            case "C":
-                                Console.WriteLine("Close + Report");
-                                Console.WriteLine("");
-                                break;
-
-                            case "R":
-                                valid1 = false;
-                                Option = Console.ReadLine();
-                                break;
-
-                        default:
-                            
-                            Console.WriteLine("That is not an option, try again.");
-
-                            break;
-
+                        return Option2;
                     }
 
+                    string chequingsAccount()
+                    {
+                        Console.WriteLine("Chequing Menu");
+                        Console.WriteLine("A:Deposit");
+                        Console.WriteLine("B:Withdrawal");
+                        Console.WriteLine("C:Close + Report");
+                        Console.WriteLine("R:Return to Bank Menu");
                         Option3 = Console.ReadLine();
-                        switch (Option3.ToUpper())
-                        {
-                            case "A":
-                                Console.WriteLine("");
-                                Console.WriteLine("");
-                                break;
-
-                            case "B":
-                                Console.WriteLine("");
-                                Console.WriteLine("");
-                                break;
-
-                            case "C":
-                                Console.WriteLine("Close + Report");
-                                Console.WriteLine("");
-                                break;
-
-                            case "D":
-                                Console.WriteLine("Report Balanace in USD");
-                                Console.WriteLine("");
-                                break;
-
-                            case "R":
-                                Console.WriteLine("Bank Menu");
-                                Console.WriteLine("A:Savings");
-                                Console.WriteLine("B:Checking");
-                                Console.WriteLine("C:GlobalSavings");
-                                Console.WriteLine("Q:Exit");
-                                Option = Console.ReadLine();
-                                break;
-
-                        default:
-                            
-                            Console.WriteLine("That is not an option, try again.");
-
-                            break;
-
-                        }
+                        return Option3;
                     }
-                    catch
+
+                    string gloabalSavingsAccount()
+                    {
+                        Console.WriteLine("Global Savings Menu");
+                        Console.WriteLine("A:Deposit");
+                        Console.WriteLine("B:Withdrawal");
+                        Console.WriteLine("C:Close + Report");
+                        Console.WriteLine("D:Report Balance in USD");
+                        Console.WriteLine("R:Return to Bank Menu");
+                        Option4 = Console.ReadLine();
+                        return Option4;
+                    }
+
+                    string savingAccountOptions()
                     {
 
                     }
+
+
+
+
+
+
+
+
+                    //var valid1 = false;
+                    //while (!valid1)
+                    //{
+
+                    Console.WriteLine(bankMenu());
+
+
+
+                    switch (Option.ToUpper())
+                    {
+                        case "A":
+                            //valid1 = true;
+                            Console.WriteLine(savingAccount());
+
+                            break;
+
+                        case "B":
+                            //valid1 = true;
+                            Console.WriteLine(chequingsAccount());
+
+                            break;
+
+                        case "C":
+                            Console.WriteLine(gloabalSavingsAccount());
+
+                            break;
+
+                        case "Q":
+                            Environment.Exit(0);
+
+                            break;
+
+                        default:
+                            //valid1 = false;
+                            Console.WriteLine("That is not an option, try again.");
+
+                            break;
+
+
+                    }
+                   
+                    Option5 = Console.ReadLine();
+               
+                switch (Option5.ToUpper())
+                {
+                            case "A":
+
+                            break;
+                }
+
+
+
+                }
+                catch
+                {
+
+                }
             }
 
         }
