@@ -16,13 +16,14 @@ namespace BankApplication
             String Option2;
             String Option3;
 
-            Account savingsAccount = new SavingsAccount(5.00, .10);
-            Account chequingAccount = new ChequingAccount(5.00, .15);
-            Account GlobalSavingsAccount = new GlobalSavingsAccount(5.00, .15);
+            SavingsAccount savingsAccount = new SavingsAccount(5.00, .10);
+            ChequingAccount chequingAccount = new ChequingAccount(5.00, .15);
+            GlobalSavingsAccount GlobalSavingsAccount = new GlobalSavingsAccount(5.00, .15);
 
             try
             {
                 
+
                 Console.WriteLine("Bank Menu");
                 Console.WriteLine("A:Savings");
                 Console.WriteLine("B:Checking");
