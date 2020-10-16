@@ -23,7 +23,21 @@ namespace BankApplication
 
         private static void Main(string[] args)
         {
-            BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+            try
+            {
+                BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                GlobalSavingsMenu();
+                SavingsMenu();
+                ChequingMenu();
+            }
+            catch (StackOverflowException se)
+            {
+                Console.WriteLine("Problem Found in source code, check program!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error Found!");
+            }
         }
        
 
