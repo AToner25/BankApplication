@@ -63,7 +63,7 @@ namespace BankApplication
                     break;
 
                 case "Q":
-
+                    Environment.Exit(0);
                     break;
 
                 default:
@@ -86,27 +86,25 @@ namespace BankApplication
                     Console.WriteLine("How much would you like to deposit?");
                     amount = Console.ReadLine();
                     globalSavingsAccount.MakeDeposit(Convert.ToDouble(amount));
-                    Console.WriteLine("Your current balance is:");
-                    Console.WriteLine(globalSavingsAccount.balance);
-                    Console.ReadLine();
+                    Console.WriteLine("Your current balance is: {0}", globalSavingsAccount.balance);
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "B":
                     Console.WriteLine("How much would you like to withdrawal?");
                     amount = Console.ReadLine();
                     globalSavingsAccount.MakeWithdrawl(Convert.ToDouble(amount));
-                    Console.WriteLine("Your current balance is:");
-                    Console.WriteLine(globalSavingsAccount.balance);
-                    Console.ReadLine();
+                    Console.WriteLine("Your current balance is: {0}", globalSavingsAccount.balance);
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "C":
                     Console.WriteLine("Close + Report:");
                     Console.WriteLine(globalSavingsAccount.CloseAndReport());
-                    Console.ReadLine();
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "D":
@@ -114,6 +112,7 @@ namespace BankApplication
                     Console.WriteLine(globalSavingsAccount.USValue(0.76));
                     Console.ReadLine();
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "R":
@@ -140,26 +139,24 @@ namespace BankApplication
                     Console.WriteLine("How much would you like to deposit?");
                     amount = Console.ReadLine();
                     chequingAccount.MakeDeposit(Convert.ToDouble(amount));
-                    Console.WriteLine("Your current balance is:");
-                    Console.WriteLine(chequingAccount.balance);
-                    Console.ReadLine();
+                    Console.WriteLine("Your current balance is: {0}", chequingAccount.balance);
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "B":
                     Console.WriteLine("How much would you like to withdrawal?");
                     chequingAccount.MakeWithdrawl(Convert.ToDouble(amount));
-                    Console.WriteLine("Your current balance is:");
-                    Console.WriteLine(globalSavingsAccount.balance);
-                    Console.ReadLine();
+                    Console.WriteLine("Your current balance is: {0}", chequingAccount.balance);
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "C":
                     Console.WriteLine("Close + Report:");
                     chequingAccount.CloseAndReport();
-                    Console.ReadLine();
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                    Console.ReadLine();
                     break;
 
                 case "R":
@@ -186,27 +183,25 @@ namespace BankApplication
                         Console.WriteLine("How much would you like to deposit?");
                         amount = Console.ReadLine();
                         savingsAccount.MakeDeposit(Convert.ToDouble(amount));
-                        Console.WriteLine("Your current balance is:");
-                        Console.WriteLine(savingsAccount.balance);
+                        Console.WriteLine("Your current balance is: {0}", savingsAccount.balance);
+                        BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                         Console.ReadLine();
-                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                     case "B":
                         Console.WriteLine("How much would you like to withdrawal?");
                         Console.WriteLine("How much would you like to withdrawal?");
                         savingsAccount.MakeWithdrawl(Convert.ToDouble(amount));
-                        Console.WriteLine("Your current balance is:");
-                        Console.WriteLine(savingsAccount.balance);
+                        Console.WriteLine("Your current balance is: {0}", savingsAccount.balance);
+                        BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                         Console.ReadLine();
-                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                     case "C":
                         Console.WriteLine("Close + Report:");
                         chequingAccount.CloseAndReport();
+                        BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                         Console.ReadLine();
-                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                     case "R":
