@@ -145,6 +145,7 @@ namespace BankApplication
 
                 case "B":
                     Console.WriteLine("How much would you like to withdrawal?");
+                    amount = Console.ReadLine();
                     chequingAccount.MakeWithdrawl(Convert.ToDouble(amount));
                     Console.WriteLine("Your current balance is: ${0}", chequingAccount.balance);
                     BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
@@ -189,7 +190,7 @@ namespace BankApplication
 
                     case "B":
                         Console.WriteLine("How much would you like to withdrawal?");
-                        Console.WriteLine("How much would you like to withdrawal?");
+                        amount = Console.ReadLine();
                         savingsAccount.MakeWithdrawl(Convert.ToDouble(amount));
                         Console.WriteLine("Your current balance is: ${0}", savingsAccount.balance);
                         BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
