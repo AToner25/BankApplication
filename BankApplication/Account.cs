@@ -9,8 +9,8 @@ namespace BankApplication
 {
     abstract class Account : IAccount
     {
-        public double startingBalance;
         public double balance;
+        public double endbalance;
         public double totalDeposit;
         public int countDeposit = 0;
         public double totalWithdraw;
@@ -38,10 +38,10 @@ namespace BankApplication
 
         public string CloseAndReport() 
         {
-            Console.WriteLine("Previous Balance: {0}", startingBalance);
-            balance -= serviceCharge;
-            Console.WriteLine("New Balance: {0}", balance);
-            Console.WriteLine(startingBalance / balance); 
+            Console.WriteLine("Previous Balance: {0}", balance);
+            endbalance = balance - serviceCharge;
+            Console.WriteLine("New Balance: {0}", endbalance);
+            Console.WriteLine(balance / endbalance); 
             countWithdraw = 0;
             countDeposit = 0;
             serviceCharge = 0;

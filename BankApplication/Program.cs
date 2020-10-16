@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +12,20 @@ namespace BankApplication
 {
     class Program
     {
+        
+        private static string amount;
         private static string option;
-        private static ChequingAccount chequingAccount;
-        private static GlobalSavingsAccount globalSavingsAccount;
-        private static readonly SavingsAccount savings;
+        private static ChequingAccount chequingAccount = new ChequingAccount(5.00,.15);
+        private static GlobalSavingsAccount globalSavingsAccount = new GlobalSavingsAccount(5.00,.10);
+        private static readonly SavingsAccount savingsAccount = new SavingsAccount(5.00,.10);
+       
+        
 
         private static void Main(string[] args)
         {
-            BankMenu(savings, chequingAccount, globalSavingsAccount);
+            BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
         }
+       
 
         private static void BankMenu(SavingsAccount savings, ChequingAccount chequing, GlobalSavingsAccount globalSavingsAccount)
         {
@@ -26,7 +33,7 @@ namespace BankApplication
             Console.WriteLine("A: Savings \n" + "B: Chequing \n" + "C: GobalSavings \n" + "Q: Exit \n");
             option = Console.ReadLine();
             option = option.ToUpper();
-
+        
             switch (option.ToUpper())
             {
                 case "A":
@@ -63,23 +70,40 @@ namespace BankApplication
             {
                 case "A":
                     Console.WriteLine("How much would you like to deposit?");
-                    
+                    amount = Console.ReadLine();
+                    globalSavingsAccount.MakeDeposit(Convert.ToDouble(amount));
+                    Console.WriteLine("Your current balance is:");
+                    Console.WriteLine(globalSavingsAccount.balance);
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "B":
                     Console.WriteLine("How much would you like to withdrawal?");
+                    amount = Console.ReadLine();
+                    globalSavingsAccount.MakeWithdrawl(Convert.ToDouble(amount));
+                    Console.WriteLine("Your current balance is:");
+                    Console.WriteLine(globalSavingsAccount.balance);
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "C":
                     Console.WriteLine("Close + Report:");
+                    Console.WriteLine(globalSavingsAccount.CloseAndReport());
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "D":
                     Console.WriteLine("Report Balance in USD:");
+                    Console.WriteLine(globalSavingsAccount.USValue(0.76));
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "R":
-                    BankMenu(savings,chequingAccount,globalSavingsAccount);
+                    BankMenu(savingsAccount,chequingAccount,globalSavingsAccount);
                     break;
 
                 default:
@@ -100,19 +124,32 @@ namespace BankApplication
             {
                 case "A":
                     Console.WriteLine("How much would you like to deposit?");
-                    
+                    amount = Console.ReadLine();
+                    chequingAccount.MakeDeposit(Convert.ToDouble(amount));
+                    Console.WriteLine("Your current balance is:");
+                    Console.WriteLine(chequingAccount.balance);
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "B":
                     Console.WriteLine("How much would you like to withdrawal?");
+                    chequingAccount.MakeWithdrawl(Convert.ToDouble(amount));
+                    Console.WriteLine("Your current balance is:");
+                    Console.WriteLine(globalSavingsAccount.balance);
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "C":
                     Console.WriteLine("Close + Report:");
+                    chequingAccount.CloseAndReport();
+                    Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 case "R":
-                    BankMenu(savings, chequingAccount, globalSavingsAccount);
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
                 default:
@@ -123,35 +160,51 @@ namespace BankApplication
         }
 
         private static void SavingsMenu()
-        {
-            Console.WriteLine("Select an option:");
-            Console.WriteLine("A: Deposit \n" + "B: Withdrawal \n" + "C: Close + Report \n" + "R: Return to Bank Menu \n");
-            option = Console.ReadLine();
-            option = option.ToUpper();
-
-            switch (option.ToUpper())
             {
-                case "A":
-                    Console.WriteLine("How much would you like to deposit?");
+                Console.WriteLine("Select an option:");
+                Console.WriteLine("A: Deposit \n" + "B: Withdrawal \n" + "C: Close + Report \n" + "R: Return to Bank Menu \n");
+                option = Console.ReadLine();
+                option = option.ToUpper();
+
+                switch (option.ToUpper())
+                {
+                    case "A":
+                        Console.WriteLine("How much would you like to deposit?");
+                        amount = Console.ReadLine();
+                        savingsAccount.MakeDeposit(Convert.ToDouble(amount));
+                        Console.WriteLine("Your current balance is:");
+                        Console.WriteLine(savingsAccount.balance);
+                        Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
-                case "B":
-                    Console.WriteLine("How much would you like to withdrawal?");
+                    case "B":
+                        Console.WriteLine("How much would you like to withdrawal?");
+                        Console.WriteLine("How much would you like to withdrawal?");
+                        savingsAccount.MakeWithdrawl(Convert.ToDouble(amount));
+                        Console.WriteLine("Your current balance is:");
+                        Console.WriteLine(savingsAccount.balance);
+                        Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
-                case "C":
-                    Console.WriteLine("Close + Report:");
+                    case "C":
+                        Console.WriteLine("Close + Report:");
+                        chequingAccount.CloseAndReport();
+                        Console.ReadLine();
+                    BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
                     break;
 
-                case "R":
-                    BankMenu(savings, chequingAccount, globalSavingsAccount);
-                    break;
+                    case "R":
+                        BankMenu(savingsAccount, chequingAccount, globalSavingsAccount);
+                        break;
 
-                default:
-                    Console.WriteLine("That is NOT an option, try again.");
-                    SavingsMenu();
-                    break;
-            }
+                    default:
+                        Console.WriteLine("That is NOT an option, try again.");
+                        SavingsMenu();
+                        break;
+                }
+            
         }
     } 
     }

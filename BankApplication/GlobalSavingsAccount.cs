@@ -13,7 +13,7 @@ namespace BankApplication
         {
 
         }
-         double IExchangeable.USValue(double rate)
+         public double USValue(double rate)
         {
             rate = 0.76;
 

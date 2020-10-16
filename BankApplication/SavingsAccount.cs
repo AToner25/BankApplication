@@ -54,7 +54,7 @@ namespace BankApplication
             }
         }
 
-        public void CloseAndReport()
+        public string CloseAndReport()
         {
             
             if(countWithdraw > 4)
@@ -71,6 +71,8 @@ namespace BankApplication
             {
                 status = accountStatus.Active;
             }
+
+            return CloseAndReport();
         }
 
         

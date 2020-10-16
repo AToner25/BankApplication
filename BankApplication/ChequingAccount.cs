@@ -33,9 +33,11 @@ namespace BankApplication
 
             base.MakeWithdrawl(amount);
         }
-        public void CloseAndReport()
+        public string CloseAndReport()
         {
             serviceCharge += 5.00 + countWithdraw * 0.10;
+
+            return CloseAndReport();
         }
         public void makeDeposit(double amount)
         {
